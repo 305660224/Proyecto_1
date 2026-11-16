@@ -1,5 +1,6 @@
 package com.example.proyecto_1_pataaldia
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
@@ -19,13 +20,13 @@ class InicioActivity : AppCompatActivity() {
 
         // Módulo Mascotas
         btnVerMascotas.setOnClickListener {
-            // val intent = Intent(this, VerMascotasActivity::class.java)
-            // startActivity(intent)
+            val intent = Intent(this, MascotasActivity::class.java)
+            startActivity(intent)
         }
 
         btnAgregarMascota.setOnClickListener {
-            // val intent = Intent(this, AgregarMascotaActivity::class.java)
-            // startActivity(intent)
+            val intent = Intent(this, AgregarMascotaActivity::class.java)
+            startActivity(intent)
         }
 
         // Módulo Vacunas
