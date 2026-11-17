@@ -5,7 +5,7 @@
     android:id="@+id/splashRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E8F5E9"
+    android:background="@color/pata_primary_light"
     android:padding="24dp"
     tools:context=".SplashActivity">
 
@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="PataAlDía"
-        android:textColor="#1B5E20"
+        android:textColor="@color/pata_primary_dark"
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/tvSplashSubtitle"

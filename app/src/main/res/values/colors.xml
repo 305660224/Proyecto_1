@@ -2,4 +2,20 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Paleta PataAlDía (veterinaria / mascotas) -->
+    <color name="pata_primary">#2E7D32</color>
+    <color name="pata_primary_dark">#1B5E20</color>
+    <color name="pata_primary_light">#E8F5E9</color>
+    <color name="pata_secondary">#43A047</color>
+    <color name="pata_background">#FAFAFA</color>
+    <color name="pata_text_secondary">#555555</color>
+
+    <!-- Acentos por módulo -->
+    <color name="vacunas_dark">#0D47A1</color>
+    <color name="vacunas_main">#1565C0</color>
+    <color name="vacunas_light">#E3F2FD</color>
+    <color name="citas_dark">#E65100</color>
+    <color name="citas_main">#EF6C00</color>
+    <color name="citas_light">#FFF3E0</color>
 </resources>

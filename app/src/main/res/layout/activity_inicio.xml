@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FAFAFA"
+    android:background="@color/pata_background"
     android:fillViewport="true"
     tools:context=".InicioActivity">
 
@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="PataAlDía"
-            android:textColor="#1B5E20"
+            android:textColor="@color/pata_primary_dark"
             android:textSize="30sp"
             android:textStyle="bold" />
 
@@ -41,7 +41,7 @@
             android:layout_marginBottom="24dp"
             android:gravity="center"
             android:text="¡Bienvenido! Gestiona el expediente de tus mascotas, su historial de vacunación y sus próximas citas veterinarias en un solo lugar."
-            android:textColor="#555555"
+            android:textColor="@color/pata_text_secondary"
             android:textSize="15sp" />
 
         <!-- Módulo Mascotas -->
@@ -49,7 +49,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:background="#E8F5E9"
+            android:background="@color/pata_primary_light"
             android:orientation="vertical"
             android:padding="16dp">
 
@@ -71,7 +71,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:text="Módulo de Mascotas"
-                    android:textColor="#1B5E20"
+                    android:textColor="@color/pata_primary_dark"
                     android:textSize="18sp"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -80,18 +80,18 @@
                 android:id="@+id/btnVerMascotas"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#2E7D32"
+                android:backgroundTint="@color/pata_primary"
                 android:text="Ver Mascotas"
-                android:textColor="#FFFFFF" />
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/btnAgregarMascota"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:backgroundTint="#43A047"
+                android:backgroundTint="@color/pata_secondary"
                 android:text="Agregar Mascota"
-                android:textColor="#FFFFFF" />
+                android:textColor="@color/white" />
         </LinearLayout>
 
         <!-- Módulo Vacunas -->
@@ -99,7 +99,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:background="#E3F2FD"
+            android:background="@color/vacunas_light"
             android:orientation="vertical"
             android:padding="16dp">
 
@@ -121,7 +121,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:text="Módulo de Vacunas"
-                    android:textColor="#0D47A1"
+                    android:textColor="@color/vacunas_dark"
                     android:textSize="18sp"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -130,9 +130,9 @@
                 android:id="@+id/btnVerVacunas"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#1565C0"
+                android:backgroundTint="@color/vacunas_main"
                 android:text="Ver Vacunas"
-                android:textColor="#FFFFFF" />
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/btnAgregarVacuna"
@@ -141,7 +141,7 @@
                 android:layout_marginTop="8dp"
                 android:backgroundTint="#1E88E5"
                 android:text="Agregar Vacuna"
-                android:textColor="#FFFFFF" />
+                android:textColor="@color/white" />
         </LinearLayout>
 
         <!-- Módulo Citas -->
@@ -149,7 +149,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:background="#FFF3E0"
+            android:background="@color/citas_light"
             android:orientation="vertical"
             android:padding="16dp">
 
@@ -171,7 +171,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:text="Módulo de Citas"
-                    android:textColor="#E65100"
+                    android:textColor="@color/citas_dark"
                     android:textSize="18sp"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -180,9 +180,9 @@
                 android:id="@+id/btnVerCitas"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#EF6C00"
+                android:backgroundTint="@color/citas_main"
                 android:text="Ver Citas"
-                android:textColor="#FFFFFF" />
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/btnAgregarCita"
@@ -191,7 +191,7 @@
                 android:layout_marginTop="8dp"
                 android:backgroundTint="#FB8C00"
                 android:text="Agregar Cita"
-                android:textColor="#FFFFFF" />
+                android:textColor="@color/white" />
         </LinearLayout>
 
     </LinearLayout>
