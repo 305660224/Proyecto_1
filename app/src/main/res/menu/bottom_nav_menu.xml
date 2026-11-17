@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/nav_inicio" android:icon="@drawable/ic_nav_home" android:title="Inicio" />
+    <item android:id="@+id/nav_mascotas" android:icon="@drawable/ic_paw" android:title="Mascotas" />
+    <item android:id="@+id/nav_vacunas" android:icon="@drawable/ic_nav_health" android:title="Vacunas" />
+    <item android:id="@+id/nav_citas" android:icon="@drawable/ic_nav_calendar" android:title="Citas" />
+</menu>

@@ -12,6 +12,6 @@ Tienes control total de mi computadora. Proyecto Android Studio "PataAlDía" (Ko
 4. Base de datos: extrae `PataAlDia.db` con `adb exec-out run-as com.example.proyecto_1_pataaldia cat databases/PataAlDia.db > capturas/PataAlDia.db` (equivale al Device File Explorer). Ábrela en "DB Browser for SQLite" (o, si no está instalado, con `sqlite3`/Python) y captura la estructura de las 3 tablas y los registros insertados (Toby, Rabia, Control anual).
 5. Completa `DOCUMENTO_TECNICO.md`: inserta las capturas (rutas relativas), el diseño real de las tablas Vacunas y Citas leyendo `DatabaseHelper.kt`, y una sección de dificultades. Luego genera `DOCUMENTO_TECNICO.docx` (con las imágenes) usando el skill docx.
 6. Genera el zip final para Moodle `C:\movil1\Proyecto_1_entrega.zip` con solo el código fuente (`git ls-files` + documento + capturas; sin `build/`, `.gradle/`, `.git/`).
-7. Haz commit en una rama `entregables` y repórtame qué quedó hecho y qué no pudiste verificar.
+7. NO hagas commit ni push: dame solo el mensaje de commit sugerido (sin "Co-Authored-By" ni mención a Claude). Repórtame qué quedó hecho y qué no pudiste verificar.
 
 No borres archivos fuera del proyecto.

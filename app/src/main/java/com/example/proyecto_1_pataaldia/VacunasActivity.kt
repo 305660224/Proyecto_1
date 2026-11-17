@@ -17,6 +17,7 @@ class VacunasActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_vacunas)
+        NavUtils.setup(this, R.id.nav_vacunas)
         findViewById<View>(R.id.vacunasRoot).aplicarInsetsSistema()
 
         dbHelper = DatabaseHelper(this)
@@ -45,6 +46,7 @@ class VacunasActivity : AppCompatActivity() {
         cargarVacunas()
     }
 
+    /** Lee las vacunas de SQLite y refresca el adaptador del ListView. */
     private fun cargarVacunas() {
         adapter.clear()
         adapter.addAll(dbHelper.obtenerVacunas())

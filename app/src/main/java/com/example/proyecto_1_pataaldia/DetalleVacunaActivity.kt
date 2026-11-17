@@ -47,6 +47,7 @@ class DetalleVacunaActivity : AppCompatActivity() {
         cargarDetalle()
     }
 
+    /** Consulta la vacuna por id y muestra sus datos; si ya no existe, cierra la pantalla. */
     private fun cargarDetalle() {
         val vacuna = dbHelper.obtenerVacunaPorId(vacunaId)
         if (vacuna == null) {
@@ -60,6 +61,7 @@ class DetalleVacunaActivity : AppCompatActivity() {
         tvNotas.text = vacuna.notas.ifBlank { "Sin notas" }
     }
 
+    /** Muestra el AlertDialog de confirmación antes de borrar. */
     private fun confirmarEliminacion() {
         val vacuna = vacunaActual ?: return
         AlertDialog.Builder(this)
@@ -70,6 +72,7 @@ class DetalleVacunaActivity : AppCompatActivity() {
             .show()
     }
 
+    /** Borra la vacuna en SQLite, informa con un Toast y regresa al listado. */
     private fun eliminarVacuna(vacuna: Vacuna) {
         if (dbHelper.eliminarVacuna(vacuna.id) > 0) {
             Toast.makeText(this, "Vacuna eliminada correctamente", Toast.LENGTH_SHORT).show()

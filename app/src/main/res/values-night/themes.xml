@@ -8,4 +8,7 @@
         <item name="android:colorBackground">@color/pata_background</item>
         <item name="android:statusBarColor">@color/pata_primary_dark</item>
     </style>
+    <style name="Widget.App.NavIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/pata_primary_light</item>
+    </style>
 </resources>

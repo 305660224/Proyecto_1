@@ -68,6 +68,7 @@ class EditarCitaActivity : AppCompatActivity() {
         findViewById<Button>(R.id.btnCancelarEditarCita).setOnClickListener { finish() }
     }
 
+    /** Valida y hace UPDATE de la cita (mismo id, no se duplica el registro). */
     private fun guardarCambios() {
         if (!validarCamposCita(tilMotivo, tilVeterinaria, tilFecha, tilHora)) return
 

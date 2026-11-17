@@ -54,6 +54,7 @@ class EditarVacunaActivity : AppCompatActivity() {
         findViewById<Button>(R.id.btnCancelarEditar).setOnClickListener { finish() }
     }
 
+    /** Valida y hace UPDATE de la vacuna (mismo id, no se duplica el registro). */
     private fun guardarCambios() {
         if (!validarCamposVacuna(tilNombre, tilFecha)) return
 

@@ -49,6 +49,7 @@ class AgregarCitaActivity : AppCompatActivity() {
         findViewById<Button>(R.id.btnCancelarAgregarCita).setOnClickListener { finish() }
     }
 
+    /** Valida el formulario, inserta la cita en SQLite, muestra un Toast y regresa al listado. */
     private fun guardarCita() {
         if (!validarCamposCita(tilMotivo, tilVeterinaria, tilFecha, tilHora)) return
 

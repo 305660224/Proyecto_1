@@ -18,6 +18,7 @@ class CitasActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_citas)
+        NavUtils.setup(this, R.id.nav_citas)
         findViewById<View>(R.id.citasRoot).aplicarInsetsSistema()
 
         dbHelper = DatabaseHelper(this)

@@ -51,6 +51,7 @@ class DetalleCitaActivity : AppCompatActivity() {
         cargarDetalle()
     }
 
+    /** Consulta la cita por id y muestra motivo, fecha, hora, veterinaria y estado. */
     private fun cargarDetalle() {
         val cita = dbHelper.obtenerCitaPorId(citaId)
         if (cita == null) {
@@ -69,6 +70,7 @@ class DetalleCitaActivity : AppCompatActivity() {
         tvEstado.setTextColor(estado.color)
     }
 
+    /** Muestra el AlertDialog de confirmación antes de eliminar la cita. */
     private fun confirmarCancelacion() {
         val cita = citaActual ?: return
         AlertDialog.Builder(this)
@@ -83,6 +85,7 @@ class DetalleCitaActivity : AppCompatActivity() {
             .show()
     }
 
+    /** Borra la cita en SQLite, informa con un Toast y regresa al listado. */
     private fun eliminarCita(cita: Cita) {
         if (dbHelper.eliminarCita(cita.id) > 0) {
             Toast.makeText(this, "Cita cancelada correctamente", Toast.LENGTH_SHORT).show()

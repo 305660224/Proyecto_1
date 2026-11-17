@@ -10,4 +10,7 @@
     </style>
 
     <style name="Theme.Proyecto_1PataAlDia" parent="Base.Theme.Proyecto_1PataAlDia" />
+    <style name="Widget.App.NavIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/pata_primary_light</item>
+    </style>
 </resources>

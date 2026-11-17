@@ -5,11 +5,16 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 
+/**
+ * Menú principal: descripción de la app y accesos directos (ver/agregar) a los módulos Mascotas, Vacunas y Citas.
+ * Incluye la barra de navegación inferior (ver [NavUtils]).
+ */
 class InicioActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_inicio)
+        NavUtils.setup(this, R.id.nav_inicio)
 
         val btnVerMascotas = findViewById<Button>(R.id.btnVerMascotas)
         val btnAgregarMascota = findViewById<Button>(R.id.btnAgregarMascota)

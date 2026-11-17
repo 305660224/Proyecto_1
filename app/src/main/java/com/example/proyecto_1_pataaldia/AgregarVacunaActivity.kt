@@ -40,6 +40,7 @@ class AgregarVacunaActivity : AppCompatActivity() {
         findViewById<Button>(R.id.btnCancelarAgregar).setOnClickListener { finish() }
     }
 
+    /** Valida el formulario, inserta la vacuna en SQLite, muestra un Toast y regresa al listado. */
     private fun guardarVacuna() {
         if (!validarCamposVacuna(tilNombre, tilFecha)) return
 

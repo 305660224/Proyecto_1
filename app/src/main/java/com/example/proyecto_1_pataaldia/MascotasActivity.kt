@@ -20,7 +20,6 @@ class MascotasActivity : AppCompatActivity() {
     private lateinit var lvMascotas: ListView
     private lateinit var tvSinMascotas: TextView
     private lateinit var btnIrAgregarMascota: Button
-    private lateinit var btnVolverInicioMascotas: Button
 
     // Lista en memoria sincronizada con las posiciones del ListView
     private var listaMascotas: List<Mascota> = emptyList()
@@ -34,17 +33,12 @@ class MascotasActivity : AppCompatActivity() {
         lvMascotas = findViewById(R.id.lvMascotas)
         tvSinMascotas = findViewById(R.id.tvSinMascotas)
         btnIrAgregarMascota = findViewById(R.id.btnIrAgregarMascota)
-        btnVolverInicioMascotas = findViewById(R.id.btnVolverInicioMascotas)
+        NavUtils.setup(this, R.id.nav_mascotas)
 
         // Botón para abrir el formulario de registro de nueva mascota
         btnIrAgregarMascota.setOnClickListener {
             val intent = Intent(this, AgregarMascotaActivity::class.java)
             startActivity(intent)
-        }
-
-        // Botón para regresar al menú principal
-        btnVolverInicioMascotas.setOnClickListener {
-            finish()
         }
 
         // Evento al hacer clic en un elemento del ListView: abre DetalleMascotaActivity enviando el ID
