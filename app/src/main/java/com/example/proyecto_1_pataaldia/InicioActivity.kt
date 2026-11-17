@@ -31,13 +31,13 @@ class InicioActivity : AppCompatActivity() {
 
         // Módulo Vacunas
         btnVerVacunas.setOnClickListener {
-            // val intent = Intent(this, VerVacunasActivity::class.java)
-            // startActivity(intent)
+            val intent = Intent(this, VacunasActivity::class.java)
+            startActivity(intent)
         }
 
         btnAgregarVacuna.setOnClickListener {
-            // val intent = Intent(this, AgregarVacunaActivity::class.java)
-            // startActivity(intent)
+            val intent = Intent(this, AgregarVacunaActivity::class.java)
+            startActivity(intent)
         }
 
         // Módulo Citas

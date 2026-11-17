@@ -23,6 +23,21 @@
         <activity
             android:name=".InicioActivity"
             android:exported="false" />
+        <!-- Módulo Salud (Vacunas) -->
+        <activity
+            android:name=".VacunasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AgregarVacunaActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".DetalleVacunaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditarVacunaActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".MascotasActivity"
             android:exported="false" />
