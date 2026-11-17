@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FAFAFA"
+    android:background="@color/pata_background"
     android:fillViewport="true"
     tools:context=".EditarMascotaActivity">
 
@@ -34,7 +34,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:text="Editar Mascota"
-                android:textColor="#1B5E20"
+                android:textColor="@color/pata_primary_dark"
                 android:textSize="22sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -45,14 +45,14 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:text="Modifica la información de la mascota seleccionada y presiona 'Guardar Cambios'."
-            android:textColor="#555555"
+            android:textColor="@color/pata_text_secondary"
             android:textSize="14sp" />
 
         <!-- Contenedor del Formulario -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#E8F5E9"
+            android:background="@color/pata_primary_light"
             android:orientation="vertical"
             android:padding="16dp">
 
@@ -61,7 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Nombre de la mascota (*)"
-                android:textColor="#1B5E20"
+                android:textColor="@color/pata_primary_dark"
                 android:textStyle="bold" />
 
             <EditText
@@ -80,7 +80,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Especie (*)"
-                android:textColor="#1B5E20"
+                android:textColor="@color/pata_primary_dark"
                 android:textStyle="bold" />
 
             <EditText
@@ -99,7 +99,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Edad en años (*)"
-                android:textColor="#1B5E20"
+                android:textColor="@color/pata_primary_dark"
                 android:textStyle="bold" />
 
             <EditText
@@ -118,7 +118,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Peso en kilogramos (kg)"
-                android:textColor="#1B5E20"
+                android:textColor="@color/pata_primary_dark"
                 android:textStyle="bold" />
 
             <EditText
@@ -137,7 +137,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Notas u observaciones"
-                android:textColor="#1B5E20"
+                android:textColor="@color/pata_primary_dark"
                 android:textStyle="bold" />
 
             <EditText
@@ -160,10 +160,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:backgroundTint="#2E7D32"
+            android:backgroundTint="@color/pata_primary"
             android:padding="12dp"
             android:text="Guardar Cambios"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/white"
             android:textSize="16sp"
             android:textStyle="bold" />
 
@@ -175,7 +175,7 @@
             android:layout_marginTop="8dp"
             android:backgroundTint="#757575"
             android:text="Cancelar"
-            android:textColor="#FFFFFF" />
+            android:textColor="@color/white" />
 
     </LinearLayout>
 </ScrollView>

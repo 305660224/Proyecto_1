@@ -4,7 +4,7 @@
     android:id="@+id/mascotasRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FAFAFA"
+    android:background="@color/pata_background"
     android:orientation="vertical"
     android:padding="20dp"
     tools:context=".MascotasActivity">
@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:text="Listado de Mascotas"
-            android:textColor="#1B5E20"
+            android:textColor="@color/pata_primary_dark"
             android:textSize="24sp"
             android:textStyle="bold" />
     </LinearLayout>
@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:text="Selecciona una mascota de la lista para ver su detalle, editarla o eliminarla."
-        android:textColor="#555555"
+        android:textColor="@color/pata_text_secondary"
         android:textSize="14sp" />
 
     <!-- Mensaje cuando no hay registros -->
@@ -50,11 +50,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:layout_marginBottom="24dp"
-        android:background="#E8F5E9"
+        android:background="@color/pata_primary_light"
         android:gravity="center"
         android:padding="20dp"
         android:text="Aún no hay mascotas registradas.\nPresiona 'Agregar Mascota' para crear el primer expediente."
-        android:textColor="#2E7D32"
+        android:textColor="@color/pata_primary"
         android:textSize="15sp"
         android:visibility="gone" />
 
@@ -64,7 +64,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="#FFFFFF"
+        android:background="@color/white"
         android:divider="#C8E6C9"
         android:dividerHeight="1dp"
         android:padding="4dp" />
@@ -75,10 +75,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:backgroundTint="#2E7D32"
+        android:backgroundTint="@color/pata_primary"
         android:padding="12dp"
         android:text="+ Agregar Mascota"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold" />
 
@@ -89,6 +89,6 @@
         android:layout_marginTop="8dp"
         android:backgroundTint="#757575"
         android:text="Volver al Menú Principal"
-        android:textColor="#FFFFFF" />
+        android:textColor="@color/white" />
 
 </LinearLayout>
