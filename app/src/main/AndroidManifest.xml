@@ -53,6 +53,7 @@
             android:name=".EditarCitaActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+        <!-- Módulo Mascotas -->
         <activity
             android:name=".MascotasActivity"
             android:exported="false" />

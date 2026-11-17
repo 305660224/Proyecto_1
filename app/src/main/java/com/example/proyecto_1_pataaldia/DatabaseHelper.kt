@@ -85,9 +85,7 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(
         onCreate(db)
     }
 
-    // =========================================================================
     // CRUD Mascotas
-    // =========================================================================
 
     /**
      * a) Inserta un nuevo registro de mascota en la tabla Mascotas.
