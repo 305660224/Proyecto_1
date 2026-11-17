@@ -38,6 +38,21 @@
             android:name=".EditarVacunaActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+        <!-- Módulo Agenda (Citas) -->
+        <activity
+            android:name=".CitasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AgregarCitaActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".DetalleCitaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditarCitaActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".MainActivity"
             android:exported="false"
