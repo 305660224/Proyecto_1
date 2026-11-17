@@ -40,15 +40,15 @@ class InicioActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        // Módulo Citas
+        // Módulo Citas (Agenda)
         btnVerCitas.setOnClickListener {
-            // val intent = Intent(this, VerCitasActivity::class.java)
-            // startActivity(intent)
+            val intent = Intent(this, CitasActivity::class.java)
+            startActivity(intent)
         }
 
         btnAgregarCita.setOnClickListener {
-            // val intent = Intent(this, AgregarCitaActivity::class.java)
-            // startActivity(intent)
+            val intent = Intent(this, AgregarCitaActivity::class.java)
+            startActivity(intent)
         }
     }
 }

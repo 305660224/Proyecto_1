@@ -174,4 +174,108 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(
     )
 
     // CRUD Citas
+
+    private val tagCitas = "DatabaseHelper.Citas"
+
+    /** CREATE: inserta una cita. Devuelve el id generado, o -1 si ocurrió un error. */
+    fun insertarCita(cita: Cita): Long {
+        return try {
+            val valores = ContentValues().apply {
+                put(COL_CITA_MOTIVO, cita.motivo)
+                put(COL_CITA_FECHA_HORA, cita.fechaHora)
+                put(COL_CITA_VETERINARIA, cita.veterinaria)
+            }
+            writableDatabase.insertOrThrow(TABLE_CITAS, null, valores)
+        } catch (e: SQLException) {
+            Log.e(tagCitas, "Error al insertar la cita", e)
+            -1L
+        }
+    }
+
+    /** READ (lista): devuelve todas las citas ordenadas por fecha y hora (de la más antigua a la más lejana). */
+    fun obtenerCitas(): List<Cita> {
+        val citas = mutableListOf<Cita>()
+        try {
+            readableDatabase.query(
+                TABLE_CITAS, null, null, null, null, null, "$COL_CITA_FECHA_HORA ASC"
+            ).use { cursor ->
+                while (cursor.moveToNext()) {
+                    citas.add(cursor.aCita())
+                }
+            }
+        } catch (e: SQLException) {
+            Log.e(tagCitas, "Error al consultar las citas", e)
+        }
+        return citas
+    }
+
+    /** READ (detalle): devuelve la cita con ese id, o null si no existe o hubo un error. */
+    fun obtenerCitaPorId(id: Int): Cita? {
+        return try {
+            readableDatabase.query(
+                TABLE_CITAS, null, "$COL_CITA_ID = ?", arrayOf(id.toString()),
+                null, null, null
+            ).use { cursor ->
+                if (cursor.moveToFirst()) cursor.aCita() else null
+            }
+        } catch (e: SQLException) {
+            Log.e(tagCitas, "Error al consultar la cita $id", e)
+            null
+        }
+    }
+
+    /** UPDATE: modifica la cita con el mismo id. Devuelve filas afectadas (0 si no existe, -1 si hubo error). */
+    fun actualizarCita(cita: Cita): Int {
+        return try {
+            val valores = ContentValues().apply {
+                put(COL_CITA_MOTIVO, cita.motivo)
+                put(COL_CITA_FECHA_HORA, cita.fechaHora)
+                put(COL_CITA_VETERINARIA, cita.veterinaria)
+            }
+            writableDatabase.update(
+                TABLE_CITAS, valores, "$COL_CITA_ID = ?", arrayOf(cita.id.toString())
+            )
+        } catch (e: SQLException) {
+            Log.e(tagCitas, "Error al actualizar la cita ${cita.id}", e)
+            -1
+        }
+    }
+
+    /** DELETE: elimina (cancela) la cita con ese id. Devuelve filas afectadas (0 si no existe, -1 si hubo error). */
+    fun eliminarCita(id: Int): Int {
+        return try {
+            writableDatabase.delete(TABLE_CITAS, "$COL_CITA_ID = ?", arrayOf(id.toString()))
+        } catch (e: SQLException) {
+            Log.e(tagCitas, "Error al eliminar la cita $id", e)
+            -1
+        }
+    }
+
+    /**
+     * Regla de negocio: no puede haber dos citas en la misma fecha y hora.
+     * Devuelve true si ya existe otra cita en [fechaHora] (formato yyyy-MM-dd HH:mm).
+     *
+     * @param excluirId id de la cita que se está editando, para que no choque consigo misma (0 al agregar).
+     */
+    fun existeCitaEnFechaHora(fechaHora: String, excluirId: Int = 0): Boolean {
+        return try {
+            readableDatabase.query(
+                TABLE_CITAS, arrayOf(COL_CITA_ID),
+                "$COL_CITA_FECHA_HORA = ? AND $COL_CITA_ID != ?",
+                arrayOf(fechaHora, excluirId.toString()),
+                null, null, null, "1"
+            ).use { cursor -> cursor.moveToFirst() }
+        } catch (e: SQLException) {
+            Log.e(tagCitas, "Error al verificar el horario $fechaHora", e)
+            false
+        }
+    }
+
+    /** Convierte la fila actual del cursor en un objeto Cita. */
+    private fun Cursor.aCita(): Cita = Cita(
+        id = getInt(getColumnIndexOrThrow(COL_CITA_ID)),
+        motivo = getString(getColumnIndexOrThrow(COL_CITA_MOTIVO)),
+        fechaHora = getString(getColumnIndexOrThrow(COL_CITA_FECHA_HORA)),
+        veterinaria = getString(getColumnIndexOrThrow(COL_CITA_VETERINARIA))
+    )
 }

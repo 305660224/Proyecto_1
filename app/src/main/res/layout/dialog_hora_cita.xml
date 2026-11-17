@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Selector de hora tipo "ruedas" (hora, minutos y AM/PM) que se muestra al tocar el campo Hora de una cita. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:paddingTop="16dp"
+    android:paddingBottom="8dp">
+
+    <NumberPicker
+        android:id="@+id/npHoraCita"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="Hora" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text=":"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <NumberPicker
+        android:id="@+id/npMinutoCita"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="Minutos" />
+
+    <NumberPicker
+        android:id="@+id/npPeriodoCita"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:contentDescription="AM o PM" />
+</LinearLayout>
