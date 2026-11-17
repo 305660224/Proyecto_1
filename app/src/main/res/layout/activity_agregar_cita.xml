@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/agregarCitaRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFAFA"
+    android:orientation="vertical"
+    tools:context=".AgregarCitaActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Agendar cita"
+                android:textColor="#BF360C"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="24dp"
+                android:text="Registra una nueva cita veterinaria en la agenda de tus mascotas."
+                android:textColor="#555555"
+                android:textSize="15sp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilMotivoCita"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Motivo de la cita"
+                android:textColorHint="#757575"
+                app:boxStrokeColor="#BF360C"
+                app:errorEnabled="true"
+                app:helperText="Ej. Control anual, vacunación, revisión de piel"
+                app:helperTextTextColor="#757575"
+                app:hintTextColor="#BF360C">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etMotivoCita"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapSentences"
+                    android:maxLines="1"
+                    android:textColor="#212121" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilVeterinariaCita"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Veterinaria o clínica"
+                android:textColorHint="#757575"
+                app:boxStrokeColor="#BF360C"
+                app:errorEnabled="true"
+                app:hintTextColor="#BF360C">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etVeterinariaCita"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionDone"
+                    android:inputType="textCapWords"
+                    android:maxLines="1"
+                    android:textColor="#212121" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilFechaCita"
+                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:hint="Fecha"
+                    android:textColorHint="#757575"
+                    app:boxStrokeColor="#BF360C"
+                    app:errorEnabled="true"
+                    app:helperText="Toca para elegir"
+                    app:helperTextTextColor="#757575"
+                    app:hintTextColor="#BF360C">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etFechaCita"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:inputType="none"
+                        android:textColor="#212121" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilHoraCita"
+                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Hora"
+                    android:textColorHint="#757575"
+                    app:boxStrokeColor="#BF360C"
+                    app:errorEnabled="true"
+                    app:helperText="Toca para elegir"
+                    app:helperTextTextColor="#757575"
+                    app:hintTextColor="#BF360C">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etHoraCita"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:inputType="none"
+                        android:textColor="#212121" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnGuardarCita"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="#BF360C"
+                android:text="Guardar cita"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/btnCancelarAgregarCita"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Cancelar"
+                android:textColor="#BF360C"
+                app:strokeColor="#BF360C" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

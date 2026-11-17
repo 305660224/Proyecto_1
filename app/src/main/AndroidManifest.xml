@@ -12,15 +12,51 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Proyecto_1PataAlDia">
         <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:windowSoftInputMode="adjustResize">
+            android:name=".SplashActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".InicioActivity"
+            android:exported="false" />
+        <!-- Módulo Salud (Vacunas) -->
+        <activity
+            android:name=".VacunasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AgregarVacunaActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".DetalleVacunaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditarVacunaActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <!-- Módulo Agenda (Citas) -->
+        <activity
+            android:name=".CitasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AgregarCitaActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".DetalleCitaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditarCitaActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>
