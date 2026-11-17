@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFAFA"
+    android:fillViewport="true"
+    tools:context=".DetalleMascotaActivity">
+
+    <LinearLayout
+        android:id="@+id/detalleMascotaRoot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Encabezado de Detalle -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:contentDescription="Icono Detalle Mascota"
+                android:src="@drawable/ic_paw" />
+
+            <TextView
+                android:id="@+id/tvTituloDetalleMascota"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Expediente de la Mascota"
+                android:textColor="#1B5E20"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Tarjeta de Información Completa -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#E8F5E9"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- ID del registro -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ID de Registro:"
+                android:textColor="#2E7D32"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvDetalleId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="#0"
+                android:textColor="#333333"
+                android:textSize="16sp" />
+
+            <!-- Nombre -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombre:"
+                android:textColor="#2E7D32"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvDetalleNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="Nombre de la mascota"
+                android:textColor="#1B5E20"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <!-- Especie -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Especie:"
+                android:textColor="#2E7D32"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvDetalleEspecie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="Especie"
+                android:textColor="#333333"
+                android:textSize="16sp" />
+
+            <!-- Edad -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edad:"
+                android:textColor="#2E7D32"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvDetalleEdad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="0 años"
+                android:textColor="#333333"
+                android:textSize="16sp" />
+
+            <!-- Peso -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Peso:"
+                android:textColor="#2E7D32"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvDetallePeso"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="0.0 kg"
+                android:textColor="#333333"
+                android:textSize="16sp" />
+
+            <!-- Notas -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Notas u observaciones:"
+                android:textColor="#2E7D32"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvDetalleNotas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sin notas adicionales."
+                android:textColor="#333333"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <!-- Botón Editar -->
+        <Button
+            android:id="@+id/btnEditarMascota"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="#1565C0"
+            android:padding="12dp"
+            android:text="Editar Mascota"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <!-- Botón Eliminar -->
+        <Button
+            android:id="@+id/btnEliminarMascota"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#C62828"
+            android:padding="12dp"
+            android:text="Eliminar Mascota"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <!-- Botón Regresar al Listado -->
+        <Button
+            android:id="@+id/btnRegresarListado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#757575"
+            android:padding="12dp"
+            android:text="Regresar al Listado"
+            android:textColor="#FFFFFF" />
+
+    </LinearLayout>
+</ScrollView>

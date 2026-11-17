@@ -87,6 +87,139 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(
 
     // CRUD Mascotas
 
+    /**
+     * a) Inserta un nuevo registro de mascota en la tabla Mascotas.
+     * @param mascota Objeto Mascota con los datos a registrar.
+     * @return true si la inserción fue exitosa, false en caso de error.
+     */
+    fun insertarMascota(mascota: Mascota): Boolean {
+        val db = this.writableDatabase
+        val values = ContentValues().apply {
+            put(COL_MASCOTA_NOMBRE, mascota.nombre)
+            put(COL_MASCOTA_ESPECIE, mascota.especie)
+            put(COL_MASCOTA_EDAD, mascota.edad)
+            put(COL_MASCOTA_PESO, mascota.peso)
+            put(COL_MASCOTA_NOTAS, mascota.notas)
+        }
+        val resultado = db.insert(TABLE_MASCOTAS, null, values)
+        db.close()
+        return resultado != -1L
+    }
+
+    /**
+     * b) Obtiene todos los registros de mascotas almacenados en la base de datos.
+     * @return Lista de objetos Mascota para poblar el ListView.
+     */
+    fun obtenerMascotas(): List<Mascota> {
+        val listaMascotas = mutableListOf<Mascota>()
+        val db = this.readableDatabase
+        val cursor = db.rawQuery("SELECT * FROM $TABLE_MASCOTAS ORDER BY $COL_MASCOTA_ID DESC", null)
+
+        if (cursor.moveToFirst()) {
+            do {
+                val id = cursor.getInt(cursor.getColumnIndexOrThrow(COL_MASCOTA_ID))
+                val nombre = cursor.getString(cursor.getColumnIndexOrThrow(COL_MASCOTA_NOMBRE))
+                val especie = cursor.getString(cursor.getColumnIndexOrThrow(COL_MASCOTA_ESPECIE))
+                val edad = cursor.getInt(cursor.getColumnIndexOrThrow(COL_MASCOTA_EDAD))
+                val peso = cursor.getDouble(cursor.getColumnIndexOrThrow(COL_MASCOTA_PESO))
+                val notas = cursor.getString(cursor.getColumnIndexOrThrow(COL_MASCOTA_NOTAS)) ?: ""
+
+                val mascota = Mascota(
+                    id = id,
+                    nombre = nombre,
+                    especie = especie,
+                    edad = edad,
+                    peso = peso,
+                    notas = notas
+                )
+                listaMascotas.add(mascota)
+            } while (cursor.moveToNext())
+        }
+        cursor.close()
+        db.close()
+        return listaMascotas
+    }
+
+    /**
+     * c) Consulta y retorna una mascota específica según su ID primario.
+     * @param id Identificador único de la mascota.
+     * @return Objeto Mascota si se encuentra, o null si no existe.
+     */
+    fun obtenerMascotaPorId(id: Int): Mascota? {
+        val db = this.readableDatabase
+        val cursor = db.query(
+            TABLE_MASCOTAS,
+            null,
+            "$COL_MASCOTA_ID = ?",
+            arrayOf(id.toString()),
+            null,
+            null,
+            null
+        )
+
+        var mascota: Mascota? = null
+        if (cursor.moveToFirst()) {
+            val mascotaId = cursor.getInt(cursor.getColumnIndexOrThrow(COL_MASCOTA_ID))
+            val nombre = cursor.getString(cursor.getColumnIndexOrThrow(COL_MASCOTA_NOMBRE))
+            val especie = cursor.getString(cursor.getColumnIndexOrThrow(COL_MASCOTA_ESPECIE))
+            val edad = cursor.getInt(cursor.getColumnIndexOrThrow(COL_MASCOTA_EDAD))
+            val peso = cursor.getDouble(cursor.getColumnIndexOrThrow(COL_MASCOTA_PESO))
+            val notas = cursor.getString(cursor.getColumnIndexOrThrow(COL_MASCOTA_NOTAS)) ?: ""
+
+            mascota = Mascota(
+                id = mascotaId,
+                nombre = nombre,
+                especie = especie,
+                edad = edad,
+                peso = peso,
+                notas = notas
+            )
+        }
+        cursor.close()
+        db.close()
+        return mascota
+    }
+
+    /**
+     * d) Actualiza los datos de una mascota existente sin duplicar el registro.
+     * @param mascota Objeto Mascota con el ID original y los datos actualizados.
+     * @return Número de filas afectadas (1 si se actualizó correctamente, 0 si no).
+     */
+    fun actualizarMascota(mascota: Mascota): Int {
+        val db = this.writableDatabase
+        val values = ContentValues().apply {
+            put(COL_MASCOTA_NOMBRE, mascota.nombre)
+            put(COL_MASCOTA_ESPECIE, mascota.especie)
+            put(COL_MASCOTA_EDAD, mascota.edad)
+            put(COL_MASCOTA_PESO, mascota.peso)
+            put(COL_MASCOTA_NOTAS, mascota.notas)
+        }
+        val filasAfectadas = db.update(
+            TABLE_MASCOTAS,
+            values,
+            "$COL_MASCOTA_ID = ?",
+            arrayOf(mascota.id.toString())
+        )
+        db.close()
+        return filasAfectadas
+    }
+
+    /**
+     * e) Elimina físicamente un registro de mascota de la base de datos por su ID.
+     * @param id Identificador único de la mascota a eliminar.
+     * @return Número de filas eliminadas (1 si fue exitoso, 0 si no se encontró).
+     */
+    fun eliminarMascota(id: Int): Int {
+        val db = this.writableDatabase
+        val filasEliminadas = db.delete(
+            TABLE_MASCOTAS,
+            "$COL_MASCOTA_ID = ?",
+            arrayOf(id.toString())
+        )
+        db.close()
+        return filasEliminadas
+    }
+
     // CRUD Vacunas
 
     private val tagVacunas = "DatabaseHelper.Vacunas"

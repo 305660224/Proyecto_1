@@ -20,13 +20,13 @@ class InicioActivity : AppCompatActivity() {
 
         // Módulo Mascotas
         btnVerMascotas.setOnClickListener {
-            // val intent = Intent(this, VerMascotasActivity::class.java)
-            // startActivity(intent)
+            val intent = Intent(this, MascotasActivity::class.java)
+            startActivity(intent)
         }
 
         btnAgregarMascota.setOnClickListener {
-            // val intent = Intent(this, AgregarMascotaActivity::class.java)
-            // startActivity(intent)
+            val intent = Intent(this, AgregarMascotaActivity::class.java)
+            startActivity(intent)
         }
 
         // Módulo Vacunas
