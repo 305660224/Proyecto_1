@@ -54,6 +54,20 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
+            android:name=".MascotasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AgregarMascotaActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".DetalleMascotaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditarMascotaActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
             android:name=".MainActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
